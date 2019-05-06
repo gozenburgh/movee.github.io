@@ -10,15 +10,18 @@
 var ax;
 var axHigh = 0;
 
+var rx;
 function setup() {
   createCanvas(window.innerWidth,window.innerHeight)
 }
 function draw(){
   ax = accelerationX;
-  if (ax < axHigh) {
+  if (ax > axHigh) {
     axHigh = ax;
+    document.getElementById("ax").innerHTML = "X Accel = " + axHigh;
   }
-  document.getElementById("ax").innerHTML = "X Accel = " + axHigh;
+  rx = rotationX;
+  document.getElementById("rx").innerHTML = "X rotation " + rx;
 }
 </script>
 </body>
